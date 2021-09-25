@@ -2,7 +2,8 @@
 
 import './index.css'
 
-const CurrencyConversion = ({
+const CurrencyConversion = (props) => (
+  const {
   name,
   price,
   symbol,
@@ -10,7 +11,7 @@ const CurrencyConversion = ({
   volume,
   image,
   priceChange,
-}) => (
+}=props
   <div className="coin-container">
     <div className="coin-row">
       <div className="coin">
@@ -19,16 +20,16 @@ const CurrencyConversion = ({
         <p className="coin-symbol">{symbol}</p>
       </div>
       <div className="coin-data">
-        <p className="coin-price">${price}</p>
-        <p className="coin-volume">${volume.toLocaleString()}</p>
+        <p className="coin-price"></p>
+        <p className="coin-volume"></p>
 
         {priceChange < 0 ? (
-          <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
+          <p className="coin-percent red"></p>
         ) : (
-          <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
+          <p className="coin-percent green"></p>
         )}
 
-        <p className="coin-marketcap">Mkt Cap: ${marketcap.toLocaleString()}</p>
+        <p className="coin-marketcap"></p>
       </div>
     </div>
   </div>
