@@ -18,11 +18,11 @@ class App extends Component() {
   }
   this.setState({data:obtainedData})
 
-   const handleChange = event => {
-    setSearch(e.target.value)
+   const searchValue = event => {
+    setSearch(event.target.value)
   }
 
-  const filteredCoins = coins.filter(coin =>
+  const filteredCurrencyCoins = coins.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   )
 
@@ -35,12 +35,12 @@ class App extends Component() {
             <input
               className="coin-input"
               type="text"
-              
+              onChange={searchValue}
               placeholder="Search"
             />
           </form>
         </div>
-        {filteredCoins.map(coin => {
+        {filteredCurrencyCoins.map(coin => {
           return (
             <Coin
               key={coin.id}
